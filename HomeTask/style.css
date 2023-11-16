@@ -1,0 +1,256 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: rgba(17, 17, 17);
+    color: white;
+}
+
+header {
+    background: linear-gradient(to bottom, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 0) 100%);
+    color: #e50914;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+}
+
+.heading
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.logo-images
+{
+    position: relative;
+    width: 150px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.logo-images img
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: z-index 50s ease-in-out;
+}
+
+.logo-images img:nth-child(2) {
+    z-index: 1;
+}
+
+.logo-images:hover img {
+    z-index: 2;
+    top: 5px;
+}
+
+nav {
+    margin-top: 10px;
+    display: block;
+    width:450px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e50914;
+}
+
+
+.search
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+}
+
+input {
+
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    border-radius: 15px;
+    padding: 5px;
+    width: 200px; 
+    background: transparent;
+    color: lightgray;
+    transition: ease-in-out 0.3s;
+    outline: none;
+}
+
+input:focus {
+    border: 3px solid red;
+    border-radius: 15px;
+    width: 400px;
+  }
+
+.myname
+{
+    width: 200px;
+    color: white;
+}  
+
+
+
+.main-content {
+    padding-top: 80px;
+}
+
+.season
+{
+    position: relative;
+    width: 500px;
+    left: 150px;
+    top: 170px;
+}
+
+.season p
+{
+    margin-top: 30px;
+}
+
+.btn-holder
+{
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.btn1 {
+    background: transparent;
+    border: 2px solid red;
+    border-radius: 25px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn1:hover {
+    background-color: red;
+}
+
+.btn2 {
+    background: transparent;
+    border: 2px solid  lightgray;
+    border-radius: 25px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: border 0.3s;
+}
+
+.btn2:hover {
+    border: 2px solid white;
+}
+
+
+ .category {
+    position: relative;
+    top: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+ }
+
+ .movies {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 10px;
+}
+
+.movie
+{
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.movie img
+{
+    width: 100%;
+    transition: 0.5s all ease-in-out;
+}
+
+.movie:hover img {
+    transform: scale(1.3);
+}
+
+.title
+{
+    margin-left:50px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(40, 40, 40, 1) 0%, rgba(40, 40, 40, 0) 100%); 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+.movie:hover .overlay {
+    opacity: 1;
+}
+
+.overlay p {
+    color: white;
+    font-size: 16px;
+    margin: 15px 15px 0 15px;
+}
+
+.overlay p:nth-child(1)
+{
+    font-size: 25px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.overlay p:nth-child(2)
+{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.overlay p:nth-child(3)
+{
+    font-size: 18px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+@keyframes slideIn {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+
+.movie:hover .overlay p:nth-child(3) {
+    animation: slideIn 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+
+
+
